@@ -18,7 +18,7 @@ func getConfigFilePath()(string, error){
 	if err != nil {
 		return "", err
 	}
-	fullPath := filepath.Join(home, "projects", "gator", configFileName)
+	fullPath := filepath.Join(home, configFileName)
 	return fullPath, nil
 }
 
