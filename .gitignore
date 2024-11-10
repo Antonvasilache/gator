@@ -1,2 +1,3 @@
 *.exe
 gator
+internal/database
