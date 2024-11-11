@@ -9,15 +9,10 @@ import (
 	"github.com/google/uuid"
 )
 
-func handleAddFeed(s *state, cmd command) error {
+func handleAddFeed(s *state, cmd command, user database.User) error {
 	if len(cmd.Args) != 2 {
 		return fmt.Errorf("reset command expects two arguments. Usage: %s <name> <url>", cmd.Name)
-	}
-
-	user, err := s.db.GetUser(context.Background(), s.cfg.CurrentUserName)
-	if err != nil {
-		return err
-	}
+	}	
 
 	name := cmd.Args[0]
 	url := cmd.Args[1]
